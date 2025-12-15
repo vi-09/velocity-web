@@ -15,7 +15,7 @@ const subteams = [
     icon: Eye,
     title: "Perception",
     description: "Computer vision, lane detection, object detection, and sensor fusion for environmental awareness.",
-    color: "from-cyan-500 to-blue-500",
+    color: "from-cyan-500 to-blue-500 -  THIS IS A TEST",
   },
   {
     icon: MapPin,
