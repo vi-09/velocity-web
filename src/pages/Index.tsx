@@ -1,13 +1,67 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import { Navbar } from "@/components/Navbar";
+import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
+import { Project } from "@/components/sections/Project";
+import { Teams } from "@/components/sections/Teams";
+import { Events } from "@/components/sections/Events";
+import { Roadmap } from "@/components/sections/Roadmap";
+import { Join } from "@/components/sections/Join";
+import { Sponsors } from "@/components/sections/Sponsors";
+import { Contact } from "@/components/sections/Contact";
+import { Footer } from "@/components/Footer";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <>
+      <Helmet>
+        <title>TMU Velocity | Autonomous Vehicles Student Team at Toronto Metropolitan University</title>
+        <meta
+          name="description"
+          content="TMU Velocity is an undergraduate student design team building autonomous vehicles at Toronto Metropolitan University. Join us in developing self-driving technology through RoboRacer competitions."
+        />
+        <meta
+          name="keywords"
+          content="TMU Velocity, autonomous vehicles, self-driving cars, Toronto Metropolitan University, RoboRacer, student team, robotics, engineering"
+        />
+        
+        {/* OpenGraph */}
+        <meta property="og:title" content="TMU Velocity | Autonomous Vehicles Student Team" />
+        <meta
+          property="og:description"
+          content="Building autonomous vehicles at Toronto Metropolitan University. Join our team or become a sponsor."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://tmuvelocity.ca" />
+        <meta property="og:image" content="/og-image.jpg" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="TMU Velocity | Autonomous Vehicles Student Team" />
+        <meta
+          name="twitter:description"
+          content="Building autonomous vehicles at Toronto Metropolitan University."
+        />
+        
+        <link rel="canonical" href="https://tmuvelocity.ca" />
+      </Helmet>
+
+      <div className="min-h-screen bg-background">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Project />
+          <Teams />
+          <Events />
+          <Roadmap />
+          <Join />
+          <Sponsors />
+          <Contact />
+        </main>
+        <Footer />
       </div>
-    </div>
+    </>
   );
 };
 
