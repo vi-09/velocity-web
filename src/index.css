@@ -7,35 +7,35 @@
 @layer base {
   :root {
     /* TMU Velocity Design System - Dark Technical Theme */
-    --background: 220 20% 6%;
-    --foreground: 210 40% 98%;
+    --background: 230 40% 6%;             /* background color*/ 
+    --foreground: 210 40% 98%;            /* most text */ 
 
-    --card: 220 20% 10%;
+    --card: 240 20% 10%;                  /* about card bg */  
     --card-foreground: 210 40% 98%;
 
     --popover: 220 20% 8%;
     --popover-foreground: 210 40% 98%;
 
     /* TMU Blue - Primary */
-    --primary: 215 100% 22%;
+    --primary: 240 100% 60%;              /* gradient color */ 
     --primary-foreground: 210 40% 98%;
 
     /* Electric Cyan - Accent */
-    --accent: 190 100% 50%;
-    --accent-foreground: 220 20% 6%;
+    --accent: 220 100% 60%;               /* main blue */ 
+    --accent-foreground: 220 20% 6%;      /* text in button */ 
 
     /* Secondary - Muted blue-gray */
-    --secondary: 215 25% 15%;
+    --secondary: 215 25% 15%;             /* about background gradient */ 
     --secondary-foreground: 210 40% 90%;
-
-    --muted: 220 15% 20%;
-    --muted-foreground: 215 20% 65%;
+ 
+    --muted: 220 15% 20%;                 /* roadmap year buttons */ 
+    --muted-foreground: 215 20% 65%;      /* roadmap text */ 
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 215 25% 18%;
-    --input: 215 25% 15%;
+    --border: 215 25% 18%;                /* border lines on objects */ 
+    --input: 0 25% 15%;
     --ring: 190 100% 50%;
 
     --radius: 0.75rem;
@@ -44,11 +44,11 @@
     --gradient-primary: linear-gradient(135deg, hsl(215 100% 22%) 0%, hsl(190 100% 30%) 100%);
     --gradient-accent: linear-gradient(135deg, hsl(190 100% 50%) 0%, hsl(215 100% 45%) 100%);
     --gradient-dark: linear-gradient(180deg, hsl(220 20% 6%) 0%, hsl(220 20% 10%) 100%);
-    --gradient-glow: radial-gradient(ellipse at center, hsl(190 100% 50% / 0.15) 0%, transparent 70%);
+    --gradient-glow: radial-gradient(ellipse at center, hsla(58, 100%, 50%, 0.15) 0%, transparent 70%);
     
-    --shadow-glow: 0 0 40px hsl(190 100% 50% / 0.3);
-    --shadow-card: 0 4px 20px hsl(0 0% 0% / 0.4);
-    --shadow-button: 0 4px 15px hsl(190 100% 50% / 0.3);
+    --shadow-glow: 0 0 40px hsla(55, 100%, 78%, 0.244);
+    --shadow-card: 0 4px 20px hsla(0, 0%, 0%, 0.4);
+    --shadow-button: 0 4px 15px hsla(200, 100%, 50%, 0.3);
 
     /* Sidebar */
     --sidebar-background: 220 20% 8%;
@@ -113,7 +113,7 @@
   }
 
   .text-glow {
-    text-shadow: 0 0 30px hsl(190 100% 50% / 0.5);
+    text-shadow: 0 0 30px hsla(223, 100%, 53%, 0.488);    /* title text glow */ 
   }
 
   .hover-glow {
