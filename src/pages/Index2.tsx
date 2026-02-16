@@ -1,9 +1,9 @@
 import { Helmet } from "react-helmet-async";
 import { Navbar } from "@/components/Navbar";
-import { Hero } from "@/components/sections/Hero";
+import { About } from "@/components/sections/About";
 import { Footer } from "@/components/Footer";
 
-const Index = () => {
+const Index2 = () => {
   return (
     <>
       <Helmet>
@@ -41,7 +41,7 @@ const Index = () => {
       <div className="min-h-screen bg-background">
         <Navbar />
         <main>
-          <Hero />
+          <About />
         </main>
         <Footer />
       </div>
@@ -49,4 +49,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default Index2;

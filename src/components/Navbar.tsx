@@ -5,13 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import heroImage from "@/assets/logo.png";
 
 const navLinks = [
-  { href: "#about", label: "About" },
-  { href: "#project", label: "Project" },
-  { href: "#events", label: "Events" },
-  { href: "#roadmap", label: "Roadmap" },
-  { href: "#join", label: "Join" },
-  { href: "#sponsors", label: "Sponsors" },
-  { href: "#contact", label: "Contact" },
+  { href: "/Index2", label: "About" },
+  { href: "/Index3", label: "Project" },
+  { href: "/Index4", label: "Events" },
+  { href: "/Index5", label: "Roadmap" },
+  { href: "/Index6", label: "Join" },
+  { href: "/Index7", label: "Sponsors" },
+  { href: "/Index8", label: "Contact" },
 ];
 
 export const Navbar = () => {
