@@ -2,11 +2,11 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import heroImage from "@/assets/logo.png";
 
 const navLinks = [
   { href: "#about", label: "About" },
   { href: "#project", label: "Project" },
-  { href: "#teams", label: "Teams" },
   { href: "#events", label: "Events" },
   { href: "#roadmap", label: "Roadmap" },
   { href: "#join", label: "Join" },
@@ -53,6 +53,13 @@ export const Navbar = () => {
               window.scrollTo({ top: 0, behavior: "smooth" });
             }}
           >
+            <span className="w-8 h-8 rounded-full bg-accent mt-2 flex-shrink-0">
+              <img
+              src={heroImage}
+              alt="TMU Velocity logo"
+              />
+            </span>
+            
             <span className="text-accent">TMU</span>
             <span className="text-foreground">Velocity</span>
           </a>

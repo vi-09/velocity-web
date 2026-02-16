@@ -38,7 +38,7 @@ export const Contact = () => {
             Get in Touch
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Contact <span className="gradient-text">Us</span>
+            Contact Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Have questions about joining the team or partnering with us? We'd love to hear from
