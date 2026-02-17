@@ -3,15 +3,16 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import heroImage from "@/assets/logo.png";
+import { Link } from "react-router-dom";
 
 const navLinks = [
-  { href: "/Index2", label: "About" },
-  { href: "/Index3", label: "Project" },
-  { href: "/Index4", label: "Events" },
-  { href: "/Index5", label: "Roadmap" },
-  { href: "/Index6", label: "Join" },
-  { href: "/Index7", label: "Sponsors" },
-  { href: "/Index8", label: "Contact" },
+  { href: "/about", label: "About" },
+  { href: "/projects", label: "Project" },
+  { href: "/events", label: "Events" },
+  { href: "/roadmap", label: "Roadmap" },
+  { href: "/join", label: "Join" },
+  { href: "/sponsor", label: "Sponsors" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export const Navbar = () => {
@@ -54,44 +55,42 @@ export const Navbar = () => {
             }}
           >
             <span className="w-8 h-8 rounded-full bg-accent mt-2 flex-shrink-0">
-              <img
-              src={heroImage}
-              alt="TMU Velocity logo"
-              />
+              
+              <Link to="/"><img src={heroImage} alt="TMU Velocity logo"/></Link>
+              
             </span>
             
-            <span className="text-accent">TMU</span>
-            <span className="text-foreground">Velocity</span>
+            <span className="text-accent">
+              <Link to="/">TMU</Link>
+            </span>
+
+            <span className="text-foreground">
+              <Link to="/">Velocity</Link>
+            </span>
+
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center gap-6">
             {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-              >
-                {link.label}
+              <button key={link.href}  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+                <Link to={link.href}>{link.label}</Link>
               </button>
             ))}
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <Button
-              variant="heroOutline"
-              size="sm"
-              onClick={() => scrollToSection("#sponsors")}
-            >
-              Sponsor Us
+            <Button variant="heroOutline" size="sm">
+              <Link to="/Sponsors">
+                Sponsor Us
+              </Link>
             </Button>
-            <Button
-              variant="hero"
-              size="sm"
-              onClick={() => scrollToSection("#join")}
-            >
-              Join the Team
+
+            <Button variant="hero" size="sm">
+              <Link to="/Join">
+                Join the Team
+              </Link>
             </Button>
           </div>
 
@@ -117,27 +116,27 @@ export const Navbar = () => {
           >
             <div className="container-width px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => (
-                <button
-                  key={link.href}
-                  onClick={() => scrollToSection(link.href)}
-                  className="text-left text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2"
-                >
-                  {link.label}
+
+                <button key={link.href} className="text-left text-base font-medium text-muted-foreground hover:text-foreground transition-colors py-2">
+                  <Link to={link.href}>{link.label}</Link>
                 </button>
               ))}
-              <div className="flex flex-col gap-3 pt-4 border-t border-border">
-                <Button
-                  variant="heroOutline"
-                  onClick={() => scrollToSection("#sponsors")}
-                >
-                  Sponsor Us
+
+              
+              <div className="flex flex-col gap-3 pt-4 border-t border-border">              
+               
+                <Button variant="heroOutline">
+                  <Link to="/Sponsors">
+                    Sponsor Us
+                  </Link>
                 </Button>
-                <Button
-                  variant="hero"
-                  onClick={() => scrollToSection("#join")}
-                >
-                  Join the Team
+
+                <Button variant="hero">
+                  <Link to="/Join">
+                    Join the Team
+                  </Link>
                 </Button>
+
               </div>
             </div>
           </motion.div>
