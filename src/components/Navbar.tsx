@@ -7,9 +7,9 @@ import { Link } from "react-router-dom";
 
 const navLinks = [
   { href: "/about", label: "About" },
-  { href: "/projects", label: "Project" },
-  { href: "/events", label: "Events" },
-  { href: "/roadmap", label: "Roadmap" },
+  { href: "/roboracer", label: "RoboRacer" },
+  { href: "/vgp", label: "Velocity Grand Prix" },
+  { href: "/outreach", label: "Events" },
   { href: "/join", label: "Join" },
   { href: "/sponsor", label: "Sponsors" },
   { href: "/contact", label: "Contact" },

@@ -37,6 +37,19 @@ const tiers = [
       "Priority recruitment access",
       "Speaking opportunity at events",
     ],
+    featured: false,
+  },
+  {
+    name: "Platinum",
+    price: "$3,000+",
+    color: "from-yellow-500 to-amber-600",
+    benefits: [
+      "All Silver benefits",
+      "Logo on competition vehicle",
+      "Exclusive demo sessions",
+      "Priority recruitment access",
+      "Speaking opportunity at events",
+    ],
     featured: true,
   },
 ];
@@ -80,10 +93,10 @@ export const Sponsors = () => {
           className="text-center mb-16"
         >
           <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
-            Partner With Us
+            Thank you
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Sponsors & <span className="gradient-text">Partners</span>
+            Our Partners
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Your support enables student innovation and helps us compete at the highest level. Join
@@ -91,24 +104,64 @@ export const Sponsors = () => {
           </p>
         </motion.div>
 
+        {/* Current Sponsors Placeholder */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.7 }}
+          className="mt-16"
+        >
+          <div className="flex flex-wrap justify-center gap-8">
+            <div key="1" className="w-32 h-16 glass-card flex items-center justify-center text-muted-foreground text-sm">
+                Logo
+            </div>
+            <div key="2" className="w-32 h-16 glass-card flex items-center justify-center text-muted-foreground text-sm">
+                Logo
+            </div>
+            <div key="3" className="w-32 h-16 glass-card flex items-center justify-center text-muted-foreground text-sm">
+                
+            </div>
+          </div>
+        </motion.div>
+
+
+
         {/* Why Sponsor */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {reasons.map((reason, index) => (
-            <motion.div
-              key={reason.title}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-              className="glass-card p-6 text-center hover-glow group"
-            >
-              <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
-                <reason.icon className="w-6 h-6 text-accent" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">{reason.title}</h3>
-              <p className="text-sm text-muted-foreground">{reason.description}</p>
-            </motion.div>
-          ))}
-        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-16"
+        >
+
+          <br /><br /><br />
+          <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
+            Partner With Us
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+            Sponsor Us
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Your support enables student innovation and helps us compete at the highest level. Join
+            us in shaping the future of autonomous vehicles.
+          </p>
+        </motion.div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="text-center"
+        >
+          <Button variant="cta" size="xl" className="group" asChild>
+            <a href="/contact">
+              Become a Sponsor
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
+        </motion.div>
 
         {/* Sponsorship Tiers */}
         <motion.div
@@ -117,10 +170,7 @@ export const Sponsors = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-bold text-foreground text-center mb-10">
-            Sponsorship Tiers
-          </h3>
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-4 gap-6">
             {tiers.map((tier, index) => (
               <motion.div
                 key={tier.name}
@@ -154,42 +204,6 @@ export const Sponsors = () => {
           </div>
         </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center"
-        >
-          <Button variant="cta" size="xl" className="group" asChild>
-            <a href="#contact">
-              Become a Sponsor
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-        </motion.div>
-
-        {/* Current Sponsors Placeholder */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-16"
-        >
-          <h3 className="text-xl font-semibold text-foreground text-center mb-8">
-            Our Partners
-          </h3>
-          <div className="flex flex-wrap justify-center gap-8">
-            {[1, 2, 3, 4, 5].map((i) => (
-              <div
-                key={i}
-                className="w-32 h-16 glass-card flex items-center justify-center text-muted-foreground text-sm"
-              >
-                Logo {i}
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </div>
     </section>
   );

@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-rc-car.jpg";
 
 export const Hero = () => {
@@ -47,7 +46,7 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
           >
-            <span className="text-foreground">TMU</span>{" "}
+            <span className="text-foreground">TMU </span>
             <span className="gradient-text text-glow">Velocity</span>
           </motion.h1>
 
@@ -93,23 +92,6 @@ export const Hero = () => {
           </motion.div>
         </div>
       </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1, duration: 0.6 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
-      >
-        <button
-          onClick={() => scrollToSection("#about")}
-          className="flex flex-col items-center gap-2 text-muted-foreground hover:text-foreground transition-colors"
-          aria-label="Scroll to learn more"
-        >
-          <span className="text-sm font-medium">Learn More</span>
-          <ChevronDown className="w-5 h-5 animate-bounce" />
-        </button>
-      </motion.div>
     </section>
   );
 };

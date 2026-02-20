@@ -94,6 +94,41 @@ export const About = () => {
             ))}
           </motion.div>
         </div>
+
+         {/* Photo Gallery Placeholder */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="mt-8"
+        >
+          <h3 className="text-lg font-semibold text-foreground mb-4">Our Team</h3>
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-4">
+            <div
+              key={1}
+              className="aspect-square glass-card flex items-center justify-center text-muted-foreground text-sm"
+            >
+              photo 1
+            </div>
+
+
+            <div
+              key={2}
+              className="aspect-square glass-card flex items-center justify-center text-muted-foreground text-sm"
+            >
+              photo 2
+            </div>
+
+            <div
+              key={3}
+              className="aspect-square glass-card flex items-center justify-center text-muted-foreground text-sm"
+            >
+              photo 3
+            </div>
+
+            
+          </div>
+        </motion.div>
       </div>
     </section>
   );
