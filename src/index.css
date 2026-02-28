@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* TMU Velocity Design System - Dark Technical Theme */
-    --background: 230 40% 6%;             /* background color*/ 
+    --background: 235 60% 6%;             /* background color*/ 
     --foreground: 210 40% 98%;            /* most text */ 
 
     --card: 240 20% 10%;                  /* about card bg */  
@@ -17,7 +17,7 @@
     --popover-foreground: 210 40% 98%;
 
     /* TMU Blue - Primary */
-    --primary: 240 100% 60%;              /* gradient color */ 
+    --primary: 250 90% 55%;              /* gradient color */ 
     --primary-foreground: 210 40% 98%;
 
     /* Electric Cyan - Accent */
@@ -29,7 +29,7 @@
     --secondary-foreground: 210 40% 90%;
  
     --muted: 220 15% 20%;                 /* roadmap year buttons */ 
-    --muted-foreground: 215 20% 65%;      /* roadmap text */ 
+    --muted-foreground: 215 20% 85%;      /* roadmap text */ 
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 210 40% 98%;
@@ -113,7 +113,7 @@
   }
 
   .text-glow {
-    text-shadow: 0 0 30px hsla(223, 100%, 53%, 0.488);    /* title text glow */ 
+    text-shadow: 0 0 30px hsla(223, 72%, 29%, 0.636);    /* title text glow */ 
   }
 
   .hover-glow {

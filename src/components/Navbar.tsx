@@ -60,11 +60,11 @@ export const Navbar = () => {
               
             </span>
             
-            <span className="text-accent">
+            <span className="text-foreground">
               <Link to="/">TMU</Link>
             </span>
 
-            <span className="text-foreground">
+            <span className="text-accent">
               <Link to="/">Velocity</Link>
             </span>
 
@@ -82,13 +82,13 @@ export const Navbar = () => {
           {/* Desktop CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="heroOutline" size="sm">
-              <Link to="/Sponsors">
+              <Link to="/sponsor">
                 Sponsor Us
               </Link>
             </Button>
 
             <Button variant="hero" size="sm">
-              <Link to="/Join">
+              <Link to="/join">
                 Join the Team
               </Link>
             </Button>
@@ -126,13 +126,13 @@ export const Navbar = () => {
               <div className="flex flex-col gap-3 pt-4 border-t border-border">              
                
                 <Button variant="heroOutline">
-                  <Link to="/Sponsors">
+                  <Link to="/sponsor">
                     Sponsor Us
                   </Link>
                 </Button>
 
                 <Button variant="hero">
-                  <Link to="/Join">
+                  <Link to="/join">
                     Join the Team
                   </Link>
                 </Button>

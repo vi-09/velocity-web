@@ -2,57 +2,8 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Award, Eye, Users, Handshake, ArrowRight } from "lucide-react";
-
-const tiers = [
-  {
-    name: "Bronze",
-    price: "$500+",
-    color: "from-amber-700 to-amber-900",
-    benefits: [
-      "Logo on team website",
-      "Social media recognition",
-      "Newsletter mentions",
-    ],
-  },
-  {
-    name: "Silver",
-    price: "$1,500+",
-    color: "from-slate-400 to-slate-600",
-    benefits: [
-      "All Bronze benefits",
-      "Logo on team apparel",
-      "Event recognition",
-      "Recruitment access",
-    ],
-    featured: false,
-  },
-  {
-    name: "Gold",
-    price: "$3,000+",
-    color: "from-yellow-500 to-amber-600",
-    benefits: [
-      "All Silver benefits",
-      "Logo on competition vehicle",
-      "Exclusive demo sessions",
-      "Priority recruitment access",
-      "Speaking opportunity at events",
-    ],
-    featured: false,
-  },
-  {
-    name: "Platinum",
-    price: "$3,000+",
-    color: "from-yellow-500 to-amber-600",
-    benefits: [
-      "All Silver benefits",
-      "Logo on competition vehicle",
-      "Exclusive demo sessions",
-      "Priority recruitment access",
-      "Speaking opportunity at events",
-    ],
-    featured: true,
-  },
-];
+import platinum1 from "@/assets/platinum1.png";
+import platinum2 from "@/assets/platinum2.png";
 
 const reasons = [
   {
@@ -77,6 +28,54 @@ const reasons = [
   },
 ];
 
+const tiers = [
+  {
+    name: "Bronze",
+    price: "$500+",
+    color: "from-amber-700 to-amber-900",
+    benefits: [
+      "Logo on website",
+    ],
+  },
+  {
+    name: "Silver",
+    price: "$1,500+",
+    color: "from-slate-400 to-slate-600",
+    benefits: [
+      "Logo on website",
+      "Logo on RoboRacer vehicle"
+    ],
+    featured: false,
+  },
+  {
+    name: "Gold",
+    price: "$2,000+",
+    color: "from-yellow-500 to-amber-600",
+    benefits: [
+      "Logo on website",
+      "Logo on RoboRacer vehicle", 
+      "Logo on general merchandise",
+      "Banner recognition",
+    ],
+    featured: false,
+  },
+  {
+    name: "Platinum",
+    price: "$3,000+",
+    color: "from-cyan-500 to-cyan-600",
+    benefits: [
+      "Logo on website",
+      "Logo on RoboRacer vehicle", 
+      "Logo on general merchandise",
+      "Banner recognition",
+      "VGP Merchandise",
+      "Progress Updates",
+      "Dedicated Social Media Post",
+    ],
+    featured: true,
+  },
+];
+
 export const Sponsors = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -90,7 +89,7 @@ export const Sponsors = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
             Thank you
@@ -104,27 +103,33 @@ export const Sponsors = () => {
           </p>
         </motion.div>
 
-        {/* Current Sponsors Placeholder */}
+        {/* Platinum */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.7 }}
-          className="mt-16"
+          className="text-center mt-16"
         >
+          <span className="inline-block px-4 py-2 mb-12 text-sm font-medium rounded-full bg-accent/10 text-muted-foreground border border-accent/20">
+            Platinum Sponsors
+          </span>
           <div className="flex flex-wrap justify-center gap-8">
-            <div key="1" className="w-32 h-16 glass-card flex items-center justify-center text-muted-foreground text-sm">
-                Logo
+            <div key="1" className="w-44 h-16 flex items-center justify-center text-muted-foreground text-sm mb-4">
+                <img
+                  src={platinum1}
+                  alt="Autonomous Vehicles Laboratory (AVL) Logo"
+                  className="w-full object-cover rounded-2xl"
+                />
             </div>
-            <div key="2" className="w-32 h-16 glass-card flex items-center justify-center text-muted-foreground text-sm">
-                Logo
-            </div>
-            <div key="3" className="w-32 h-16 glass-card flex items-center justify-center text-muted-foreground text-sm">
-                
+            <div key="2" className="w-44 h-16 flex items-center justify-center text-muted-foreground text-sm mb-4">
+                <img
+                  src={platinum2}
+                  alt="Metropolitan Undergraduate Engineering Society (MUES) Logo"
+                  className="w-full object-cover rounded-2xl"
+                /> 
             </div>
           </div>
         </motion.div>
-
-
 
         {/* Why Sponsor */}
 
@@ -132,7 +137,7 @@ export const Sponsors = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-8"
         >
 
           <br /><br /><br />
@@ -153,10 +158,10 @@ export const Sponsors = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="text-center"
+          className="text-center mb-8"
         >
           <Button variant="cta" size="xl" className="group" asChild>
-            <a href="/contact">
+            <a href="https://drive.google.com/uc?export=download&id=16z5X4wYFHzELQVkAPGia2tNGKKG3hAjv" download="2025-2026 TMU Velocity Sponsorship Package.pdf">
               Become a Sponsor
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
@@ -203,6 +208,7 @@ export const Sponsors = () => {
             ))}
           </div>
         </motion.div>
+      
 
       </div>
     </section>

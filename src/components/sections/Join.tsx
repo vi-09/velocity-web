@@ -1,6 +1,10 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Button } from "@/components/ui/button";
+import join1 from "@/assets/join1.png";
+import join2 from "@/assets/join4.jpg";
+import join3 from "@/assets/join3.jpg";
+
 import { 
   GraduationCap, 
   Wrench, 
@@ -16,12 +20,12 @@ const benefits = [
   {
     icon: Wrench,
     title: "Hands-On Experience",
-    description: "Work on real autonomous systems—from sensors to software to competition vehicles.",
+    description: "Work on real autonomous systems from sensors to software to competition vehicles.",
   },
   {
     icon: Users,
     title: "Team Collaboration",
-    description: "Join a passionate team of engineers solving complex autonomy challenges together.",
+    description: "Join a passionate team of students solving complex autonomy challenges together.",
   },
   {
     icon: Trophy,
@@ -31,7 +35,7 @@ const benefits = [
   {
     icon: GraduationCap,
     title: "Mentorship",
-    description: "Learn from experienced members and faculty advisors from the AVL lab.",
+    description: "Learn from experienced members and faculty advisors from the Autonomous Vehicles Laboratory.",
   },
 ];
 
@@ -39,20 +43,20 @@ const steps = [
   {
     icon: FileText,
     step: "1",
-    title: "Fill Out Interest Form",
-    description: "Submit your interest and tell us about your background and skills.",
+    title: "No Prior Experience is Required",
+    description: "All new members complete the structured training package teaching everything needed from the ground up.",
   },
   {
     icon: Calendar,
     step: "2",
-    title: "Attend Onboarding Meeting",
-    description: "Join our orientation to learn about the team, projects, and expectations.",
+    title: "Bring Your Enthusiasm",
+    description: "Curiousity and commitment is the key! Showing up consistently ensures you can learn anything.",
   },
   {
     icon: Lightbulb,
     step: "3",
-    title: "Choose a Subteam",
-    description: "Select the subteam that matches your interests and start contributing.",
+    title: "Join a Community",
+    description: "Join us if you are someone looking to connect with peers and build knowledge for future members.",
   },
 ];
 
@@ -72,7 +76,7 @@ export const Join = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
             Join Us
@@ -81,11 +85,33 @@ export const Join = () => {
             Join <span className="gradient-text">TMU Velocity</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We welcome students from all years and disciplines who are passionate about autonomous
-            systems, robotics, and pushing the boundaries of technology.
+            We open applications for TMU Velocity once or twice a year. Please keep a look out for our social platforms for updates when applications open and next steps. 
+          
           </p>
         </motion.div>
 
+        {/* CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="text-center mb-16"
+        >
+          <Button variant="cta" size="xl" className="group" asChild>
+            <a href="https://www.instagram.com/tmuvelocity/"
+             target="_blank" rel="noopener noreferrer">
+              Visit Social Media
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
+          <p className="mt-4 text-sm text-muted-foreground">
+            Questions? Email us at{" "}
+            <a href="mailto:velocity@torontomu.ca" className="text-accent hover:underline">
+              velocity@torontomu.ca
+            </a>
+          </p>
+        </motion.div>
+        
         {/* Benefits */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {benefits.map((benefit, index) => (
@@ -105,51 +131,26 @@ export const Join = () => {
           ))}
         </div>
 
-        {/* How to Join Steps */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="glass-card p-8 md:p-12 mb-12"
-        >
-          <h3 className="text-2xl font-bold text-foreground text-center mb-10">How to Join</h3>
-          <div className="grid md:grid-cols-3 gap-8">
-            {steps.map((step, index) => (
-              <div key={step.step} className="relative text-center">
-                {/* Connector line */}
-                {index < steps.length - 1 && (
-                  <div className="hidden md:block absolute top-8 left-1/2 w-full h-px bg-gradient-to-r from-accent/50 to-transparent" />
-                )}
-                <div className="w-16 h-16 rounded-full bg-accent/10 border-2 border-accent/50 flex items-center justify-center mx-auto mb-4 relative z-10">
-                  <span className="text-2xl font-bold text-accent">{step.step}</span>
-                </div>
-                <h4 className="font-semibold text-foreground mb-2">{step.title}</h4>
-                <p className="text-sm text-muted-foreground">{step.description}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-center"
-        >
-          <Button variant="cta" size="xl" className="group" asChild>
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              Apply / Interest Form
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-            </a>
-          </Button>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Questions? Email us at{" "}
-            <a href="mailto:velocity@torontomu.ca" className="text-accent hover:underline">
-              velocity@torontomu.ca
-            </a>
-          </p>
-        </motion.div>
+        {/* background image*/}  
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            <img
+              src={join1}
+              alt="TMU Velocity autonomous RC car racing on track"
+              className="w-full object-cover rounded-2xl mb-16"
+            />
+            <img
+              src={join2}
+              alt="TMU Velocity autonomous RC car racing on track"
+              className="w-full object-cover rounded-2xl mb-16"
+            />
+            <img
+              src={join3}
+              alt="TMU Velocity autonomous RC car racing on track"
+              className="w-full object-cover rounded-2xl mb-16"
+            />
+          </div>
+
       </div>
     </section>
   );

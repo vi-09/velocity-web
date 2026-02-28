@@ -1,71 +1,43 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Eye, Brain, Cpu, TestTube, Play } from "lucide-react";
-import systemDiagram from "@/assets/system-diagram.jpg";
-
-import { Rocket, Target, Zap, Globe } from "lucide-react";
-const phases = [
-  {
-    icon: Rocket,
-    phase: "Phase 1",
-    title: "Foundation",
-    period: "2024",
-    description:
-      "Establish team structure, set up AVL lab access, begin RC car platform development, and recruit founding members.",
-    status: "completed",
-  },
-  {
-    icon: Target,
-    phase: "Phase 2",
-    title: "First Competition",
-    period: "2025",
-    description:
-      "Complete autonomous RC car build, implement core perception and planning systems, compete at first RoboRacer event.",
-    status: "current",
-  },
-  {
-    icon: Zap,
-    phase: "Phase 3",
-    title: "Advanced Systems",
-    period: "2026",
-    description:
-      "Integrate advanced ML models, implement full SLAM pipeline, develop custom simulation environment, expand team capabilities.",
-    status: "upcoming",
-  },
-  {
-    icon: Globe,
-    phase: "Phase 4",
-    title: "Scale & Impact",
-    period: "2027+",
-    description:
-      "Develop varying levels of autonomous vehicles in large-scale and small-scale applications to deepen understanding of evolving technologies.",
-    status: "future",
-  },
-];
+import { Eye, Brain, Cpu, ChartSpline, Play, Split } from "lucide-react";
+import systemDiagram from "@/assets/system-diagram.png";
+import heroImage from "@/assets/roboracer-header.jpg";
 
 const highlights = [
+  
+  {
+    icon: Cpu,
+    title: "Localization & Mapping (SLAM)",
+    description: "Advanced camera and LiDar systems for environmental understanding of vehicle in physical space.",
+    color: "from-cyan-500 to-blue-500 "
+  },
   {
     icon: Eye,
-    title: "Perception",
-    description: "Advanced camera and sensor systems for environmental understanding and obstacle detection.",
+    title: "Obstacle Avoidance",
+    description: "Detecting instantaneous changes to avoid incoming obstacles and other vehicles for safety.",
+    color: "from-blue-500 to-indigo-500"
   },
   {
     icon: Brain,
-    title: "Planning & Control",
-    description: "Intelligent path planning algorithms and precise vehicle control systems.",
+    title: "Path Planning",
+    description: "Intelligent path planning algorithms developed based on several mapping runs in the environment.",
+    color:  "from-indigo-500 to-purple-500"
   },
   {
-    icon: Cpu,
-    title: "Hardware Integration",
-    description: "Custom sensor mounts, compute platforms, and power management systems.",
+    icon: Split,
+    title: "Raceline Optimization",
+    description: "Optimizing generated vehicle paths for best time trials and competitive vehicle performance.",
+    color: "from-purple-500 to-pink-500"
   },
+
   {
-    icon: TestTube,
-    title: "Testing & Iteration",
-    description: "Rigorous simulation and real-world testing to validate autonomous behaviors.",
+    icon: ChartSpline,
+    title: "Particle Filtering",
+    description: "Rigorous simulation and real-world testing to validate vehicle's ability to follow planned paths.",
+    color: "from-pink-500 to-rose-500"
   },
 ];
-
 
 export const Project = () => {
   const ref = useRef(null);
@@ -110,13 +82,22 @@ export const Project = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
+          {/* background image*/}  
+          <div>
+            <img
+              src={heroImage}
+              alt="TMU Velocity autonomous RC car racing on track"
+              className="w-full object-cover rounded-2xl mb-12"
+            />
+          </div>
+      
           <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
             Current Project
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Autonomous RC Car <span className="gradient-text">RoboRacer</span>
+            Autonomous RC Car:<span className="gradient-text"> RoboRacer</span> 
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We're modifying an RC car for autonomous navigation to compete at RoboRacer
@@ -125,7 +106,8 @@ export const Project = () => {
         </motion.div>
 
         {/* Project Highlights */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <h3 className="text-xl font-semibold text-foreground mb-4">Our Topics</h3>
+        <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-6 mb-16">
           {highlights.map((item, index) => (
             <motion.div
               key={item.title}
@@ -134,6 +116,14 @@ export const Project = () => {
               transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
               className="glass-card p-6 hover-glow group"
             >
+
+
+              {/* Gradient accent */}
+              <div
+                className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r ${item.color} opacity-60 group-hover:opacity-100 transition-opacity`}
+              />
+
+
               <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
                 <item.icon className="w-6 h-6 text-accent" />
               </div>
@@ -179,91 +169,10 @@ export const Project = () => {
             <div className="p-4">
               <h3 className="text-lg font-semibold text-foreground mb-2">Track Testing Demo</h3>
               <p className="text-sm text-muted-foreground">
-                Watch our autonomous RC car navigate the track using computer vision and real-time
-                path planning.
+                Watch our autonomous RC car navigate the track using real-time path planning.
               </p>
             </div>
           </motion.div>
-        </div>
-      </div>
-
-      
-      <div className="container-width relative z-10" ref={ref}>
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
-            Our Vision
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Roadmap & <span className="gradient-text">Future</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            In the future, we seek to develop varying levels of autonomous cars in large-scale
-            and small-scale applications to deepen understanding of evolving technologies.
-          </p>
-        </motion.div>
-
-        {/* Timeline */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent via-border to-border/30" />
-
-          <div className="space-y-8">
-            {phases.map((phase, index) => (
-              <motion.div
-                key={phase.phase}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.5, delay: 0.2 + index * 0.1 }}
-                className={`relative flex items-start gap-6 md:gap-8 ${
-                  index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-                }`}
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4 md:left-1/2 w-3 h-3 rounded-full bg-accent -translate-x-1/2 mt-6 ring-4 ring-background" />
-
-                {/* Card */}
-                <div
-                  className={`ml-12 md:ml-0 md:w-1/2 ${
-                    index % 2 === 0 ? "md:pr-12" : "md:pl-12"
-                  }`}
-                >
-                  <div
-                    className={`glass-card p-6 border ${getStatusStyles(phase.status)} hover-glow`}
-                  >
-                    <div className="flex items-center gap-3 mb-4">
-                      <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                        <phase.icon className="w-5 h-5 text-accent" />
-                      </div>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="font-semibold text-foreground">{phase.phase}</span>
-                          <span
-                            className={`text-xs font-medium px-2 py-0.5 rounded-full ${getStatusBadge(
-                              phase.status
-                            )}`}
-                          >
-                            {phase.status === "current" ? "In Progress" : phase.period}
-                          </span>
-                        </div>
-                        <h3 className="text-lg font-bold text-foreground">{phase.title}</h3>
-                      </div>
-                    </div>
-                    <p className="text-muted-foreground text-sm leading-relaxed">
-                      {phase.description}
-                    </p>
-                  </div>
-                </div>
-
-                {/* Spacer for alternating layout */}
-                <div className="hidden md:block md:w-1/2" />
-              </motion.div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

@@ -1,10 +1,60 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { toast } from "sonner";
 import { Mail, MapPin, Send, Linkedin, Instagram, Github } from "lucide-react";
+import { Award, Eye, Users, Handshake, ArrowRight } from "lucide-react";
+
+const tiers = [
+  {
+    name: "Bronze",
+    price: "$500+",
+    color: "from-amber-700 to-amber-900",
+    benefits: [
+      "Logo on team website",
+      "Social media recognition",
+      "Newsletter mentions",
+    ],
+  },
+  {
+    name: "Silver",
+    price: "$1,500+",
+    color: "from-slate-400 to-slate-600",
+    benefits: [
+      "All Bronze benefits",
+      "Logo on team apparel",
+      "Event recognition",
+      "Recruitment access",
+    ],
+    featured: false,
+  },
+  {
+    name: "Gold",
+    price: "$3,000+",
+    color: "from-yellow-500 to-amber-600",
+    benefits: [
+      "All Silver benefits",
+      "Logo on competition vehicle",
+      "Exclusive demo sessions",
+      "Priority recruitment access",
+      "Speaking opportunity at events",
+    ],
+    featured: false,
+  },
+  {
+    name: "Platinum",
+    price: "$3,000+",
+    color: "from-yellow-500 to-amber-600",
+    benefits: [
+      "All Silver benefits",
+      "Logo on competition vehicle",
+      "Exclusive demo sessions",
+      "Priority recruitment access",
+      "Speaking opportunity at events",
+    ],
+    featured: true,
+  },
+];
 
 export const Contact = () => {
   const ref = useRef(null);
@@ -41,75 +91,11 @@ export const Contact = () => {
             Contact Us
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Have questions about joining the team or partnering with us? We'd love to hear from
-            you.
+            Questions about joining the team or partnering with us? We'd love to hear from you.
           </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <form onSubmit={handleSubmit} className="glass-card p-8 space-y-6">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">
-                  Name
-                </label>
-                <Input
-                  id="name"
-                  name="name"
-                  placeholder="Your name"
-                  required
-                  className="bg-secondary/50 border-border/50 focus:border-accent"
-                />
-              </div>
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
-                  Email
-                </label>
-                <Input
-                  id="email"
-                  name="email"
-                  type="email"
-                  placeholder="you@example.com"
-                  required
-                  className="bg-secondary/50 border-border/50 focus:border-accent"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">
-                  Message
-                </label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  placeholder="Tell us about your interest..."
-                  rows={5}
-                  required
-                  className="bg-secondary/50 border-border/50 focus:border-accent resize-none"
-                />
-              </div>
-              <Button
-                type="submit"
-                variant="hero"
-                size="lg"
-                className="w-full"
-                disabled={isSubmitting}
-              >
-                {isSubmitting ? (
-                  "Sending..."
-                ) : (
-                  <>
-                    Send Message
-                    <Send className="w-4 h-4" />
-                  </>
-                )}
-              </Button>
-            </form>
-          </motion.div>
 
           {/* Contact Info */}
           <motion.div
@@ -144,7 +130,7 @@ export const Contact = () => {
                   <div>
                     <p className="font-medium text-foreground">Location</p>
                     <p className="text-muted-foreground">
-                      Toronto, Ontario
+                      Toronto, Ontario, Canada
                       <br />
                       Toronto Metropolitan University
                     </p>
@@ -152,26 +138,36 @@ export const Contact = () => {
                 </div>
               </div>
             </div>
+          </motion.div>
 
-            <div className="glass-card p-8">
+          <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6 }}
+          className="text-left mb-16"
+        >
+            <div className="glass-card p-8 mb-8">
               <h3 className="text-xl font-semibold text-foreground mb-6">Follow Us</h3>
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  target="_blank" rel="noopener noreferrer"
+                  href="https://www.linkedin.com/company/tmu-velocity/"
                   className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/20 transition-colors"
                   aria-label="LinkedIn"
                 >
                   <Linkedin className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  target="_blank" rel="noopener noreferrer"
+                  href="https://www.instagram.com/tmuvelocity/"
                   className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/20 transition-colors"
                   aria-label="Instagram"
                 >
                   <Instagram className="w-5 h-5" />
                 </a>
                 <a
-                  href="#"
+                  target="_blank" rel="noopener noreferrer"
+                  href="https://github.com/TMU-Velocity"
                   className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center text-muted-foreground hover:text-accent hover:bg-accent/20 transition-colors"
                   aria-label="GitHub"
                 >
@@ -179,8 +175,23 @@ export const Contact = () => {
                 </a>
               </div>
             </div>
+
+            <div className="glass-card p-8">
+              <h3 className="text-xl font-semibold text-foreground mb-6">Download Sponsorship Package</h3>
+              <div className="flex gap-4">
+                
+                <Button size="lg" className="group" asChild>
+                  <a href="https://drive.google.com/uc?export=download&id=16z5X4wYFHzELQVkAPGia2tNGKKG3hAjv" download="2025-2026 TMU Velocity Sponsorship Package.pdf">
+                    Become a Sponsor
+                    <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  </a>
+                </Button>
+                
+              </div>
+            </div>
           </motion.div>
-        </div>
+          </div>
+        
       </div>
     </section>
   );

@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-rc-car.jpg";
+import { Link } from "react-router-dom";
 
 export const Hero = () => {
   const scrollToSection = (href: string) => {
@@ -19,8 +20,8 @@ export const Hero = () => {
           alt="TMU Velocity autonomous RC car racing on track"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background/80 via-transparent to-background/40" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/50 to-background/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-background/70 via-transparent to-background/70" />
       </div>
 
       {/* Ambient Glow Effects */}
@@ -75,20 +76,18 @@ export const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <Button
-              variant="hero"
-              size="xl"
-              onClick={() => scrollToSection("#join")}
-            >
-              Join the Team
+            <Button variant="hero" size="xl">
+              <Link to="/join">
+                Join the Team
+              </Link>
             </Button>
-            <Button
-              variant="heroOutline"
-              size="xl"
-              onClick={() => scrollToSection("#sponsors")}
-            >
-              Sponsor Us
+
+            <Button variant="heroOutline" size="xl">
+              <Link to="/sponsor">
+                Sponsor Us
+              </Link>
             </Button>
+
           </motion.div>
         </div>
       </div>

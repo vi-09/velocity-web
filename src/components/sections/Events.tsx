@@ -4,31 +4,31 @@ import { Calendar, MapPin, Clock, Users } from "lucide-react";
 
 const upcomingEvents = [
   {
-    title: "Winter 2025 Recruitment Info Session",
-    date: "January 15, 2025",
-    time: "5:00 PM - 7:00 PM",
-    location: "ENG Building, Room 201",
+    title: "Kick-Off Meeting",
+    date: "January 22, 2026",
+    time: "6:00 PM - 8:00 PM",
+    location: "ENG Building, Room LG11",
     type: "Recruitment",
   },
   {
-    title: "Intro to Computer Vision Workshop",
-    date: "January 22, 2025",
+    title: "Eng Expo Booth - Fall",
+    date: "October 6, 2025",
     time: "6:00 PM - 8:00 PM",
-    location: "AVL Lab, Room 305",
+    location: "Daphne Cockwell Complex, Room 103",
+    type: "Demo",
+  },
+  {
+    title: "ROS2 Tutorial",
+    date: "September 29, 2025",
+    time: "6:00 PM - 9:00 PM",
+    location: "Kerr Hall East, Room 129",
     type: "Workshop",
   },
   {
-    title: "ROS2 Fundamentals Workshop",
-    date: "February 5, 2025",
-    time: "6:00 PM - 8:00 PM",
-    location: "AVL Lab, Room 305",
-    type: "Workshop",
-  },
-  {
-    title: "Team Demo Day",
-    date: "March 15, 2025",
-    time: "2:00 PM - 5:00 PM",
-    location: "George Vari Engineering Building",
+    title: "Eng Expo Booth - Summer",
+    date: "August 25, 2025",
+    time: "12:00 PM - 3:00 PM",
+    location: "Kerr Hall Quad",
     type: "Demo",
   },
 ];
@@ -44,7 +44,9 @@ export const Events = () => {
       case "Workshop":
         return "bg-purple-500/20 text-purple-400";
       case "Demo":
-        return "bg-orange-500/20 text-orange-400";
+        return "bg-blue-500/20 text-blue-400";
+      case "VGP":
+        return "bg-green-500/20 text-green-400";
       default:
         return "bg-accent/20 text-accent";
     }
@@ -59,16 +61,16 @@ export const Events = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <span className="inline-block px-4 py-2 mb-4 text-sm font-medium rounded-full bg-accent/10 text-accent border border-accent/20">
             Get Involved
           </span>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
-            Workshops & <span className="gradient-text">Events</span>
+            Workshops & Events
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            We host events to engage TMU students—from intro sessions to meet the team to
+            We host events to engage TMU students from intro sessions to meet the team to
             hands-on workshops led by students for students.
           </p>
         </motion.div>
@@ -81,7 +83,7 @@ export const Events = () => {
           >
             <h3 className="text-xl font-semibold text-foreground mb-6 flex items-center gap-2">
               <Calendar className="w-5 h-5 text-accent" />
-              Upcoming Events
+              Events
             </h3>
             <div className="space-y-4">
               {upcomingEvents.map((event, index) => (
@@ -135,14 +137,13 @@ export const Events = () => {
               <div>
                 <h4 className="font-medium text-foreground mb-2">Meet the Team</h4>
                 <p className="text-muted-foreground text-sm">
-                  Connect with current members, learn about our projects, and discover which
-                  subteam fits your interests.
+                  Connect with current members, learn about our projects, and discover if our team fits your interests.
                 </p>
               </div>
               <div>
                 <h4 className="font-medium text-foreground mb-2">Hands-On Learning</h4>
                 <p className="text-muted-foreground text-sm">
-                  Our workshops cover essential skills—from computer vision to ROS2—taught by
+                  Our workshops cover essential skills from computer vision to ROS2 taught by
                   experienced student members.
                 </p>
               </div>
@@ -157,7 +158,7 @@ export const Events = () => {
                 <h4 className="font-medium text-foreground mb-2">Network & Grow</h4>
                 <p className="text-muted-foreground text-sm">
                   Build connections with peers passionate about autonomy, robotics, and the
-                  future of transportation.
+                  future of robotic systems.
                 </p>
               </div>
             </div>
