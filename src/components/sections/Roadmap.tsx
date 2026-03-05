@@ -74,7 +74,7 @@ export const Roadmap = () => {
               <div className="flex items-start gap-3">
                 <div className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
                 <p className="text-muted-foreground">
-                  Through <span className="text-foreground font-medium">3 guided workshops</span>, students learn vehicle architecture, system components, and Linux-based environments with organizers providing technical support throughout.
+                  Through <span className="text-foreground font-medium">2 guided workshops</span>, students learn vehicle architecture, system components, and Linux-based environments with organizers providing technical support throughout.
                 </p>
               </div>
             </div>

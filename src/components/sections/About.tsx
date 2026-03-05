@@ -58,27 +58,27 @@ const software = [
   },
   {
     icon: UserRound,
-    title: "",
+    title: "Arnav Kothekar",
     description: "Software Lead - Path Following",
   },
   {
     icon: UserRound,
-    title: "",
+    title: "Viet Nguyen",
     description: "Software Lead - Obstacle Avoidance",
   },
   {
     icon: UserRound,
-    title: "",
+    title: "Ammar	Hakim",
     description: "Software Lead - Particle Filter",
   },
   {
     icon: UserRound,
-    title: "",
+    title: "Daniel Kuzhel",
     description: "Software Lead - Raceline Optimization",
   },
   {
     icon: UserRound,
-    title: "",
+    title: "Yasir Saeed",
     description: "Software Lead - SLAM",
   },
 ];
